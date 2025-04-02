@@ -6,7 +6,7 @@ Listar Peças: Exibe todas as peças disponíveis no catálogo.
 Comprar Peça: Remove uma peça da lista, simulando a compra.
 """)
 
-veiculos = []  # Lista para armazenar os veículos
+veiculo = []  # Lista para armazenar os veículos
 id_veiculo = 1  # Inicializa o ID dos veículos
 
 # Função para cadastrar um novo veículo
@@ -21,7 +21,7 @@ def cadastrar_veiculo():
     # Cria o dicionário para o novo veículo
     veiculo = {"id": id_veiculo, "marca": marca, "modelo": modelo, "ano": ano, "preco": preco}
 
-    veiculos.append(veiculo)  # Adiciona o veículo na lista usando append()
+    veiculo.append(veiculo)  # Adiciona o veículo na lista usando append()
     print(f"Veículo cadastrado com sucesso! ID: {id_veiculo}\n")
     
     id_veiculo += 1  # Incrementa o ID para o próximo veículo
@@ -29,48 +29,48 @@ def cadastrar_veiculo():
 # Função para listar os veículos disponíveis
 def listar_veiculos():
     print("Lista de Veículos Disponíveis")
-    if not veiculos:
+    if not veiculo:
         print("Nenhum veículo cadastrado.\n")
     else:
-        for v in veiculos:
+        for v in veiculo:
             print(f"ID: {v['id']} | Marca: {v['marca']} | Modelo: {v['modelo']} | Ano: {v['ano']} | Preço: {v['preco']}")
         print()
 
 # Função para vender um veículo
 def vender_veiculo():
     listar_veiculos()
-    if veiculos:
+    if veiculo:
         id_veiculo = int(input("Digite o ID do veículo que deseja vender: "))
 
         # Verifica se o veículo existe
-        for v in veiculos:
+        for v in veiculo:
             if v['id'] == id_veiculo:
-                veiculos.remove(v)  # Remove o veículo vendido da lista
+                veiculo.remove(v)  # Remove o veículo vendido da lista
                 print("Veículo vendido com sucesso!\n")
                 return  # Sai da função depois de vender o veículo
 
         print("Veículo não encontrado.\n")
 
 # Exemplo de veículos cadastrados inicialmente
-veiculos.append({"id": id_veiculo, "marca": "Ford", "modelo": "Mustang", "ano": 2022, "preco": 300000})
+veiculo.append({"id": id_veiculo, "marca": "Ford", "modelo": "Mustang", "ano": 2022, "preco": 300000})
 id_veiculo += 1
-veiculos.append({"id": id_veiculo, "marca": "Chevrolet", "modelo": "Camaro", "ano": 2021, "preco": 280000})
+veiculo.append({"id": id_veiculo, "marca": "Chevrolet", "modelo": "Camaro", "ano": 2021, "preco": 280000})
 id_veiculo += 1
-veiculos.append({"id": id_veiculo, "marca": "Toyota", "modelo": "Corolla", "ano": 2023, "preco": 120000})
+veiculo.append({"id": id_veiculo, "marca": "Toyota", "modelo": "Corolla", "ano": 2023, "preco": 120000})
 id_veiculo += 1
-veiculos.append({"id": id_veiculo, "marca": "Honda", "modelo": "Civic", "ano": 2022, "preco": 130000})
+veiculo.append({"id": id_veiculo, "marca": "Honda", "modelo": "Civic", "ano": 2022, "preco": 130000})
 id_veiculo += 1
-veiculos.append({"id": id_veiculo, "marca": "Volkswagen", "modelo": "Golf", "ano": 2020, "preco": 110000})
+veiculo.append({"id": id_veiculo, "marca": "Volkswagen", "modelo": "Golf", "ano": 2020, "preco": 110000})
 id_veiculo += 1
-veiculos.append({"id": id_veiculo, "marca": "BMW", "modelo": "M3", "ano": 2023, "preco": 400000})
+veiculo.append({"id": id_veiculo, "marca": "BMW", "modelo": "M3", "ano": 2023, "preco": 400000})
 id_veiculo += 1
-veiculos.append({"id": id_veiculo, "marca": "Mercedes", "modelo": "C-Class", "ano": 2021, "preco": 350000})
+veiculo.append({"id": id_veiculo, "marca": "Mercedes", "modelo": "C-Class", "ano": 2021, "preco": 350000})
 id_veiculo += 1
-veiculos.append({"id": id_veiculo, "marca": "Audi", "modelo": "A4", "ano": 2022, "preco": 320000})
+veiculo.append({"id": id_veiculo, "marca": "Audi", "modelo": "A4", "ano": 2022, "preco": 320000})
 id_veiculo += 1
-veiculos.append({"id": id_veiculo, "marca": "Nissan", "modelo": "GT-R", "ano": 2019, "preco": 500000})
+veiculo.append({"id": id_veiculo, "marca": "Nissan", "modelo": "GT-R", "ano": 2019, "preco": 500000})
 id_veiculo += 1
-veiculos.append({"id": id_veiculo, "marca": "Hyundai", "modelo": "Elantra", "ano": 2020, "preco": 90000})
+veiculo.append({"id": id_veiculo, "marca": "Hyundai", "modelo": "Elantra", "ano": 2020, "preco": 90000})
 id_veiculo += 1
 
 # Menu principal
